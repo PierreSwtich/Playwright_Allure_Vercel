@@ -56,4 +56,5 @@ jobs:
         REPO: self
         BRANCH: vercel-allure
         FOLDER: allure-report
+        CLEAR_GLOBS_FILE: ".globfile"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
