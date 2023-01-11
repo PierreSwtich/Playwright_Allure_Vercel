@@ -71,7 +71,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         github_user: github-user
         workflow_file_name: playwright.yml
-        ref: allure-vercel
+        ref: vercel-allure
         wait_interval: 10
         client_payload: '{}'
         propagate_failure: false
