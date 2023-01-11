@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps chromium
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v3
@@ -70,7 +70,7 @@ jobs:
         repo: Playwright_Allure_Vercel
         github_token: ${{ secrets.GITHUB_TOKEN }}
         github_user: github-user
-        workflow_file_name: .github/workflows/playwright.yml
+        workflow_file_name: playwright.yml
         ref: allure-vercel
         wait_interval: 10
         client_payload: '{}'
