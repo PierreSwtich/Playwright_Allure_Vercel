@@ -6,6 +6,13 @@ on:
   push:
     branches:
       - vercel-allure
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Which branch to deploy"
+        required: true
+    branches:
+      - ${{ inputs.branch }}
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
