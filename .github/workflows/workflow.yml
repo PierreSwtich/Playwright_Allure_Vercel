@@ -5,7 +5,7 @@ env:
 on:
   push:
     branches:
-      - gh-pages
+      - vercel-allure
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
