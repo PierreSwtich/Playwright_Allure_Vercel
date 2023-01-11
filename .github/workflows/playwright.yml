@@ -33,7 +33,7 @@ jobs:
       continue-on-error: true
       with:
         ref: vercel-allure
-        path: history/**
+        path: vercel-allure
 
     - name: Allure Report action from marketplace
       uses: simple-elf/allure-report-action@master
