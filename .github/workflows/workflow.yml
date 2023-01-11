@@ -6,11 +6,6 @@ on:
   push:
     branches:
       - vercel-allure
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: "Which branch to deploy"
-        required: true
 
 jobs:
   Deploy-Production:
