@@ -60,11 +60,9 @@ jobs:
         CLEAR_GLOBS_FILE: ".globfile"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-    - name: Dispatch Vercel Deployment workflow
-      if: always()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      uses: actions/create-or-update-workflow-dispatch@v3
+    - name: Start Vercel Production Deployment workflow
+      uses: actions/start-workflow@v2
       with:
-        workflow_file_name: vercel-deployment.yml
-        branch: vercel-allure
+        name: Vercel Production Deployment
+        ref: vercel-allure
+        path: .github/workflows/workflow.yml
