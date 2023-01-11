@@ -32,8 +32,8 @@ jobs:
       if: always()
       continue-on-error: true
       with:
-        ref: gh-pages
-        path: gh-pages
+        ref: vercel-allure
+        path: history/**
 
     - name: Allure Report action from marketplace
       uses: simple-elf/allure-report-action@master
