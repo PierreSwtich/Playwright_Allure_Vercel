@@ -61,5 +61,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Trigger deployment workflow
-      run: curl -X POST https://api.github.com/repos/OWNER/REPO/dispatches -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H 'Content-Type: application/json' -d '{"event_type": "deploy-vercel"}'
+      run: |
+        curl -X POST https://api.github.com/repos/OWNER/REPO/dispatches -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H 'Content-Type: application/json' -d '{"event_type": "deploy-vercel"}'
 
