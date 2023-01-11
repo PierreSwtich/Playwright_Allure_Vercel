@@ -68,7 +68,7 @@ jobs:
       with:
         owner: PierreSwtich
         repo: Playwright_Allure_Vercel
-        github_token: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         github_user: github-user
         workflow_file_name: .github/workflows/playwright.yml
         ref: allure-vercel
