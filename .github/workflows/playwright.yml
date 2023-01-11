@@ -64,7 +64,7 @@ jobs:
       if: always()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      uses: actions/create-or-update-workflow-dispatch@v3
+      uses: actions/create-or-update-workflow-dispatch@v2
       with:
         workflow_file_name: vercel-deployment.yml
         branch: vercel-allure
