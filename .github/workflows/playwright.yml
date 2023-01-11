@@ -61,13 +61,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Dispatch Vercel Deployment workflow
-        if: always()
-        run: |
-          echo ::set-output name=branch::vercel-allure
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/create-or-update-workflow-dispatch@v3
-        with:
-          workflow_file_name: vercel-deployment.yml
-          inputs:
-            branch: ${{ steps.branch.outputs.branch }}
+      if: always()
+      run: |
+        echo ::set-output name=branch::vercel-allure
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/create-or-update-workflow-dispatch@v3
+      with:
+        workflow_file_name: vercel-deployment.yml
+        inputs:
+          branch: ${{ steps.branch.outputs.branch }}
