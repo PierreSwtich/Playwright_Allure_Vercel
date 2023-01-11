@@ -3,8 +3,8 @@ env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
-  repository_dispatch:
-    types: [deploy-vercel]
+  push:
+    branches: [ allure-vercel ]
 
 jobs:
   Deploy-Production:
