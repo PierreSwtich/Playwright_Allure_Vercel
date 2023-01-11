@@ -60,7 +60,20 @@ jobs:
         CLEAR_GLOBS_FILE: ".globfile"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-    - name: Trigger deployment workflow
-      run: |
-        curl -X POST https://api.github.com/repos/PierreSwtich/Playwright_Allure_Vercel/dispatches -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H 'Content-Type: application/json' -d '{"event_type": "deploy-vercel"}'
+    # - name: Trigger deployment workflow
+    #   run: |
+    #     curl -X POST https://api.github.com/repos/PierreSwtich/Playwright_Allure_Vercel/dispatches -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H 'Content-Type: application/json' -d '{"event_type": "deploy-vercel"}'
 
+  - uses: convictional/trigger-workflow-and-wait@v1.6.1
+    with:
+      owner: PierreSwtich
+      repo: Playwright_Allure_Vercel
+      github_token: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+      github_user: github-user
+      workflow_file_name: .github/workflows/playwright.yml
+      ref: allure-vercel
+      wait_interval: 10
+      client_payload: '{}'
+      propagate_failure: false
+      trigger_workflow: true
+      wait_workflow: true
