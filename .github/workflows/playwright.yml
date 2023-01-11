@@ -66,7 +66,7 @@ jobs:
           echo ::set-output name=branch::vercel-allure
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/create-or-update-workflow-dispatch@v2
+        uses: actions/create-or-update-workflow-dispatch@v3
         with:
           workflow_file_name: vercel-deployment.yml
           inputs:
