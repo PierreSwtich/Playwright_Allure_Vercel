@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - vercel-allure
+  repository_dispatch:
+    types: [deploy-vercel]
 
 jobs:
   Deploy-Production:
