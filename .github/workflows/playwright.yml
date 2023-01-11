@@ -62,5 +62,5 @@ jobs:
         
     - name: Trigger deployment workflow
       run: |
-        curl -X POST https://api.github.com/repos/OWNER/REPO/dispatches -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H 'Content-Type: application/json' -d '{"event_type": "deploy-vercel"}'
+        curl -X POST https://api.github.com/repos/PierreSwtich/Playwright_Allure_Vercel/dispatches -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H 'Content-Type: application/json' -d '{"event_type": "deploy-vercel"}'
 
