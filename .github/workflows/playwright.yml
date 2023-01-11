@@ -60,9 +60,6 @@ jobs:
         CLEAR_GLOBS_FILE: ".globfile"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-    - name: Start Vercel Production Deployment workflow
-      uses: actions/start-workflow@v2
-      with:
-        name: Vercel Production Deployment
-        ref: vercel-allure
-        path: .github/workflows/workflow.yml
+    - name: Trigger deployment workflow
+      run: curl -X POST https://api.github.com/repos/OWNER/REPO/dispatches -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H 'Content-Type: application/json' -d '{"event_type": "deploy-vercel"}'
+
